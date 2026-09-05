@@ -1,0 +1,1010 @@
+{
+  "metadata": {
+    "seed": 42,
+    "description": "Synthetic Human-Robot Safety Simulation Experiment Dataset",
+    "num_samples": 100
+  },
+  "layouts": [],
+  "experiments": [
+    {
+      "sample_id": "EXP-001",
+      "robot_speed_ms": 1.44,
+      "human_speed_ms": 1.74,
+      "reaction_time_s": 0.32,
+      "sensor_noise_sigma_m": 0.17,
+      "calculated_s_req_m": 3.61,
+      "simulated_dist_m": 1.22,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-002",
+      "robot_speed_ms": 1.07,
+      "human_speed_ms": 0.67,
+      "reaction_time_s": 0.36,
+      "sensor_noise_sigma_m": 0.17,
+      "calculated_s_req_m": 2.124,
+      "simulated_dist_m": 2.71,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-003",
+      "robot_speed_ms": 0.83,
+      "human_speed_ms": 1.76,
+      "reaction_time_s": 0.35,
+      "sensor_noise_sigma_m": 0.09,
+      "calculated_s_req_m": 2.787,
+      "simulated_dist_m": 1.29,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-004",
+      "robot_speed_ms": 1.11,
+      "human_speed_ms": 0.97,
+      "reaction_time_s": 0.26,
+      "sensor_noise_sigma_m": 0.14,
+      "calculated_s_req_m": 2.237,
+      "simulated_dist_m": 1.59,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-005",
+      "robot_speed_ms": 1.84,
+      "human_speed_ms": 0.77,
+      "reaction_time_s": 0.19,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 3.035,
+      "simulated_dist_m": 2.03,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-006",
+      "robot_speed_ms": 2.13,
+      "human_speed_ms": 0.84,
+      "reaction_time_s": 0.25,
+      "sensor_noise_sigma_m": 0.17,
+      "calculated_s_req_m": 3.886,
+      "simulated_dist_m": 0.93,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-007",
+      "robot_speed_ms": 1.83,
+      "human_speed_ms": 0.8,
+      "reaction_time_s": 0.12,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 2.972,
+      "simulated_dist_m": 3.41,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-008",
+      "robot_speed_ms": 2.17,
+      "human_speed_ms": 0.97,
+      "reaction_time_s": 0.13,
+      "sensor_noise_sigma_m": 0.19,
+      "calculated_s_req_m": 3.729,
+      "simulated_dist_m": 1.99,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-009",
+      "robot_speed_ms": 1.01,
+      "human_speed_ms": 1.19,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 2.061,
+      "simulated_dist_m": 1.5,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-010",
+      "robot_speed_ms": 1.93,
+      "human_speed_ms": 0.97,
+      "reaction_time_s": 0.26,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 3.607,
+      "simulated_dist_m": 1.3,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-011",
+      "robot_speed_ms": 2.45,
+      "human_speed_ms": 1.53,
+      "reaction_time_s": 0.38,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 5.791,
+      "simulated_dist_m": 2.41,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-012",
+      "robot_speed_ms": 2.37,
+      "human_speed_ms": 0.71,
+      "reaction_time_s": 0.16,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 3.936,
+      "simulated_dist_m": 1.68,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-013",
+      "robot_speed_ms": 1.46,
+      "human_speed_ms": 0.93,
+      "reaction_time_s": 0.35,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 2.906,
+      "simulated_dist_m": 1.56,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-014",
+      "robot_speed_ms": 1.72,
+      "human_speed_ms": 0.77,
+      "reaction_time_s": 0.34,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 3.141,
+      "simulated_dist_m": 3.46,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-015",
+      "robot_speed_ms": 2.11,
+      "human_speed_ms": 0.84,
+      "reaction_time_s": 0.1,
+      "sensor_noise_sigma_m": 0.21,
+      "calculated_s_req_m": 3.44,
+      "simulated_dist_m": 2.71,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-016",
+      "robot_speed_ms": 2.04,
+      "human_speed_ms": 1.53,
+      "reaction_time_s": 0.12,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 3.786,
+      "simulated_dist_m": 1.11,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-017",
+      "robot_speed_ms": 2.27,
+      "human_speed_ms": 1.35,
+      "reaction_time_s": 0.2,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 4.359,
+      "simulated_dist_m": 1.64,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-018",
+      "robot_speed_ms": 1.35,
+      "human_speed_ms": 1.48,
+      "reaction_time_s": 0.29,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 3.195,
+      "simulated_dist_m": 2.07,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-019",
+      "robot_speed_ms": 1.0,
+      "human_speed_ms": 1.46,
+      "reaction_time_s": 0.33,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 2.721,
+      "simulated_dist_m": 2.88,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-020",
+      "robot_speed_ms": 1.64,
+      "human_speed_ms": 1.23,
+      "reaction_time_s": 0.23,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 3.118,
+      "simulated_dist_m": 1.09,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-021",
+      "robot_speed_ms": 0.85,
+      "human_speed_ms": 1.36,
+      "reaction_time_s": 0.19,
+      "sensor_noise_sigma_m": 0.15,
+      "calculated_s_req_m": 2.124,
+      "simulated_dist_m": 3.25,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-022",
+      "robot_speed_ms": 1.22,
+      "human_speed_ms": 1.09,
+      "reaction_time_s": 0.33,
+      "sensor_noise_sigma_m": 0.1,
+      "calculated_s_req_m": 2.616,
+      "simulated_dist_m": 1.01,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-023",
+      "robot_speed_ms": 1.29,
+      "human_speed_ms": 0.79,
+      "reaction_time_s": 0.38,
+      "sensor_noise_sigma_m": 0.21,
+      "calculated_s_req_m": 2.644,
+      "simulated_dist_m": 2.51,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-024",
+      "robot_speed_ms": 2.28,
+      "human_speed_ms": 1.56,
+      "reaction_time_s": 0.16,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 4.557,
+      "simulated_dist_m": 2.26,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-025",
+      "robot_speed_ms": 2.17,
+      "human_speed_ms": 1.68,
+      "reaction_time_s": 0.2,
+      "sensor_noise_sigma_m": 0.07,
+      "calculated_s_req_m": 4.42,
+      "simulated_dist_m": 1.42,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-026",
+      "robot_speed_ms": 1.53,
+      "human_speed_ms": 1.58,
+      "reaction_time_s": 0.36,
+      "sensor_noise_sigma_m": 0.05,
+      "calculated_s_req_m": 3.629,
+      "simulated_dist_m": 2.18,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-027",
+      "robot_speed_ms": 1.51,
+      "human_speed_ms": 0.87,
+      "reaction_time_s": 0.14,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 2.434,
+      "simulated_dist_m": 3.35,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-028",
+      "robot_speed_ms": 1.35,
+      "human_speed_ms": 1.22,
+      "reaction_time_s": 0.31,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 2.904,
+      "simulated_dist_m": 3.42,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-029",
+      "robot_speed_ms": 2.44,
+      "human_speed_ms": 0.9,
+      "reaction_time_s": 0.25,
+      "sensor_noise_sigma_m": 0.11,
+      "calculated_s_req_m": 4.587,
+      "simulated_dist_m": 1.57,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-030",
+      "robot_speed_ms": 0.86,
+      "human_speed_ms": 1.33,
+      "reaction_time_s": 0.25,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 2.162,
+      "simulated_dist_m": 1.55,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-031",
+      "robot_speed_ms": 2.34,
+      "human_speed_ms": 0.89,
+      "reaction_time_s": 0.14,
+      "sensor_noise_sigma_m": 0.15,
+      "calculated_s_req_m": 4.024,
+      "simulated_dist_m": 3.46,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-032",
+      "robot_speed_ms": 1.21,
+      "human_speed_ms": 1.41,
+      "reaction_time_s": 0.33,
+      "sensor_noise_sigma_m": 0.1,
+      "calculated_s_req_m": 2.906,
+      "simulated_dist_m": 2.77,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-033",
+      "robot_speed_ms": 1.43,
+      "human_speed_ms": 1.36,
+      "reaction_time_s": 0.29,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 3.144,
+      "simulated_dist_m": 1.04,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-034",
+      "robot_speed_ms": 2.22,
+      "human_speed_ms": 0.98,
+      "reaction_time_s": 0.16,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 3.818,
+      "simulated_dist_m": 2.4,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-035",
+      "robot_speed_ms": 1.95,
+      "human_speed_ms": 0.62,
+      "reaction_time_s": 0.25,
+      "sensor_noise_sigma_m": 0.1,
+      "calculated_s_req_m": 3.257,
+      "simulated_dist_m": 2.54,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-036",
+      "robot_speed_ms": 1.1,
+      "human_speed_ms": 1.43,
+      "reaction_time_s": 0.22,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 2.625,
+      "simulated_dist_m": 1.17,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-037",
+      "robot_speed_ms": 1.38,
+      "human_speed_ms": 0.74,
+      "reaction_time_s": 0.38,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 2.759,
+      "simulated_dist_m": 1.5,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-038",
+      "robot_speed_ms": 1.92,
+      "human_speed_ms": 1.58,
+      "reaction_time_s": 0.27,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 4.159,
+      "simulated_dist_m": 1.45,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-039",
+      "robot_speed_ms": 0.96,
+      "human_speed_ms": 1.68,
+      "reaction_time_s": 0.37,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 3.004,
+      "simulated_dist_m": 1.72,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-040",
+      "robot_speed_ms": 1.39,
+      "human_speed_ms": 1.47,
+      "reaction_time_s": 0.37,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 3.477,
+      "simulated_dist_m": 2.91,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-041",
+      "robot_speed_ms": 1.89,
+      "human_speed_ms": 0.7,
+      "reaction_time_s": 0.15,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 3.073,
+      "simulated_dist_m": 2.44,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-042",
+      "robot_speed_ms": 0.82,
+      "human_speed_ms": 0.72,
+      "reaction_time_s": 0.3,
+      "sensor_noise_sigma_m": 0.05,
+      "calculated_s_req_m": 1.658,
+      "simulated_dist_m": 1.23,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-043",
+      "robot_speed_ms": 1.73,
+      "human_speed_ms": 1.43,
+      "reaction_time_s": 0.3,
+      "sensor_noise_sigma_m": 0.09,
+      "calculated_s_req_m": 3.692,
+      "simulated_dist_m": 2.72,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-044",
+      "robot_speed_ms": 1.2,
+      "human_speed_ms": 0.99,
+      "reaction_time_s": 0.32,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 2.545,
+      "simulated_dist_m": 3.09,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-045",
+      "robot_speed_ms": 1.92,
+      "human_speed_ms": 1.28,
+      "reaction_time_s": 0.13,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 3.406,
+      "simulated_dist_m": 1.52,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-046",
+      "robot_speed_ms": 1.21,
+      "human_speed_ms": 1.77,
+      "reaction_time_s": 0.22,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 3.044,
+      "simulated_dist_m": 2.5,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-047",
+      "robot_speed_ms": 2.15,
+      "human_speed_ms": 1.2,
+      "reaction_time_s": 0.27,
+      "sensor_noise_sigma_m": 0.15,
+      "calculated_s_req_m": 4.291,
+      "simulated_dist_m": 1.33,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-048",
+      "robot_speed_ms": 2.03,
+      "human_speed_ms": 0.94,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 3.357,
+      "simulated_dist_m": 1.28,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-049",
+      "robot_speed_ms": 2.4,
+      "human_speed_ms": 1.74,
+      "reaction_time_s": 0.37,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 5.729,
+      "simulated_dist_m": 0.84,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-050",
+      "robot_speed_ms": 2.38,
+      "human_speed_ms": 1.11,
+      "reaction_time_s": 0.39,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 5.24,
+      "simulated_dist_m": 3.1,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-051",
+      "robot_speed_ms": 1.3,
+      "human_speed_ms": 1.06,
+      "reaction_time_s": 0.36,
+      "sensor_noise_sigma_m": 0.11,
+      "calculated_s_req_m": 2.788,
+      "simulated_dist_m": 1.26,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-052",
+      "robot_speed_ms": 1.75,
+      "human_speed_ms": 1.72,
+      "reaction_time_s": 0.31,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 4.096,
+      "simulated_dist_m": 1.06,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-053",
+      "robot_speed_ms": 1.85,
+      "human_speed_ms": 1.79,
+      "reaction_time_s": 0.14,
+      "sensor_noise_sigma_m": 0.15,
+      "calculated_s_req_m": 3.726,
+      "simulated_dist_m": 3.17,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-054",
+      "robot_speed_ms": 2.06,
+      "human_speed_ms": 1.44,
+      "reaction_time_s": 0.31,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 4.423,
+      "simulated_dist_m": 1.59,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-055",
+      "robot_speed_ms": 2.18,
+      "human_speed_ms": 1.57,
+      "reaction_time_s": 0.36,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 5.101,
+      "simulated_dist_m": 2.18,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-056",
+      "robot_speed_ms": 1.65,
+      "human_speed_ms": 1.56,
+      "reaction_time_s": 0.29,
+      "sensor_noise_sigma_m": 0.19,
+      "calculated_s_req_m": 3.727,
+      "simulated_dist_m": 2.95,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-057",
+      "robot_speed_ms": 2.31,
+      "human_speed_ms": 1.01,
+      "reaction_time_s": 0.21,
+      "sensor_noise_sigma_m": 0.07,
+      "calculated_s_req_m": 4.21,
+      "simulated_dist_m": 2.36,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-058",
+      "robot_speed_ms": 0.86,
+      "human_speed_ms": 1.16,
+      "reaction_time_s": 0.26,
+      "sensor_noise_sigma_m": 0.11,
+      "calculated_s_req_m": 2.077,
+      "simulated_dist_m": 2.4,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-059",
+      "robot_speed_ms": 0.85,
+      "human_speed_ms": 0.64,
+      "reaction_time_s": 0.35,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 1.751,
+      "simulated_dist_m": 1.14,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-060",
+      "robot_speed_ms": 1.69,
+      "human_speed_ms": 1.52,
+      "reaction_time_s": 0.16,
+      "sensor_noise_sigma_m": 0.17,
+      "calculated_s_req_m": 3.326,
+      "simulated_dist_m": 1.03,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-061",
+      "robot_speed_ms": 0.89,
+      "human_speed_ms": 1.24,
+      "reaction_time_s": 0.26,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 2.246,
+      "simulated_dist_m": 2.76,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-062",
+      "robot_speed_ms": 2.46,
+      "human_speed_ms": 1.22,
+      "reaction_time_s": 0.2,
+      "sensor_noise_sigma_m": 0.21,
+      "calculated_s_req_m": 4.825,
+      "simulated_dist_m": 1.53,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-063",
+      "robot_speed_ms": 1.55,
+      "human_speed_ms": 0.69,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 2.406,
+      "simulated_dist_m": 3.06,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-064",
+      "robot_speed_ms": 1.98,
+      "human_speed_ms": 1.09,
+      "reaction_time_s": 0.15,
+      "sensor_noise_sigma_m": 0.08,
+      "calculated_s_req_m": 3.402,
+      "simulated_dist_m": 1.48,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-065",
+      "robot_speed_ms": 1.73,
+      "human_speed_ms": 1.46,
+      "reaction_time_s": 0.3,
+      "sensor_noise_sigma_m": 0.11,
+      "calculated_s_req_m": 3.738,
+      "simulated_dist_m": 3.38,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-066",
+      "robot_speed_ms": 2.05,
+      "human_speed_ms": 1.27,
+      "reaction_time_s": 0.28,
+      "sensor_noise_sigma_m": 0.13,
+      "calculated_s_req_m": 4.153,
+      "simulated_dist_m": 1.47,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-067",
+      "robot_speed_ms": 1.41,
+      "human_speed_ms": 1.51,
+      "reaction_time_s": 0.1,
+      "sensor_noise_sigma_m": 0.07,
+      "calculated_s_req_m": 2.612,
+      "simulated_dist_m": 0.92,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-068",
+      "robot_speed_ms": 0.87,
+      "human_speed_ms": 1.63,
+      "reaction_time_s": 0.31,
+      "sensor_noise_sigma_m": 0.14,
+      "calculated_s_req_m": 2.654,
+      "simulated_dist_m": 1.06,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-069",
+      "robot_speed_ms": 1.64,
+      "human_speed_ms": 1.17,
+      "reaction_time_s": 0.15,
+      "sensor_noise_sigma_m": 0.14,
+      "calculated_s_req_m": 2.913,
+      "simulated_dist_m": 1.88,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-070",
+      "robot_speed_ms": 1.85,
+      "human_speed_ms": 1.36,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 3.274,
+      "simulated_dist_m": 2.49,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-071",
+      "robot_speed_ms": 1.66,
+      "human_speed_ms": 1.63,
+      "reaction_time_s": 0.3,
+      "sensor_noise_sigma_m": 0.08,
+      "calculated_s_req_m": 3.739,
+      "simulated_dist_m": 0.99,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-072",
+      "robot_speed_ms": 1.89,
+      "human_speed_ms": 0.63,
+      "reaction_time_s": 0.28,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 3.357,
+      "simulated_dist_m": 2.35,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-073",
+      "robot_speed_ms": 1.46,
+      "human_speed_ms": 1.37,
+      "reaction_time_s": 0.24,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 3.06,
+      "simulated_dist_m": 3.34,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-074",
+      "robot_speed_ms": 1.46,
+      "human_speed_ms": 1.75,
+      "reaction_time_s": 0.37,
+      "sensor_noise_sigma_m": 0.09,
+      "calculated_s_req_m": 3.739,
+      "simulated_dist_m": 0.99,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-075",
+      "robot_speed_ms": 0.97,
+      "human_speed_ms": 0.62,
+      "reaction_time_s": 0.13,
+      "sensor_noise_sigma_m": 0.19,
+      "calculated_s_req_m": 1.596,
+      "simulated_dist_m": 0.99,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-076",
+      "robot_speed_ms": 1.34,
+      "human_speed_ms": 1.61,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.21,
+      "calculated_s_req_m": 2.748,
+      "simulated_dist_m": 1.56,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-077",
+      "robot_speed_ms": 1.0,
+      "human_speed_ms": 1.44,
+      "reaction_time_s": 0.29,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 2.672,
+      "simulated_dist_m": 2.78,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-078",
+      "robot_speed_ms": 2.17,
+      "human_speed_ms": 0.94,
+      "reaction_time_s": 0.15,
+      "sensor_noise_sigma_m": 0.2,
+      "calculated_s_req_m": 3.778,
+      "simulated_dist_m": 2.98,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-079",
+      "robot_speed_ms": 2.48,
+      "human_speed_ms": 1.1,
+      "reaction_time_s": 0.21,
+      "sensor_noise_sigma_m": 0.21,
+      "calculated_s_req_m": 4.81,
+      "simulated_dist_m": 1.72,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-080",
+      "robot_speed_ms": 2.38,
+      "human_speed_ms": 1.63,
+      "reaction_time_s": 0.23,
+      "sensor_noise_sigma_m": 0.2,
+      "calculated_s_req_m": 5.085,
+      "simulated_dist_m": 2.84,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-081",
+      "robot_speed_ms": 0.98,
+      "human_speed_ms": 1.68,
+      "reaction_time_s": 0.25,
+      "sensor_noise_sigma_m": 0.22,
+      "calculated_s_req_m": 2.75,
+      "simulated_dist_m": 1.66,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-082",
+      "robot_speed_ms": 2.32,
+      "human_speed_ms": 1.07,
+      "reaction_time_s": 0.1,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 4.059,
+      "simulated_dist_m": 1.05,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-083",
+      "robot_speed_ms": 1.34,
+      "human_speed_ms": 1.74,
+      "reaction_time_s": 0.39,
+      "sensor_noise_sigma_m": 0.16,
+      "calculated_s_req_m": 3.657,
+      "simulated_dist_m": 2.51,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-084",
+      "robot_speed_ms": 1.56,
+      "human_speed_ms": 0.95,
+      "reaction_time_s": 0.2,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 2.779,
+      "simulated_dist_m": 2.83,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-085",
+      "robot_speed_ms": 2.15,
+      "human_speed_ms": 1.55,
+      "reaction_time_s": 0.13,
+      "sensor_noise_sigma_m": 0.15,
+      "calculated_s_req_m": 4.084,
+      "simulated_dist_m": 0.96,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-086",
+      "robot_speed_ms": 1.73,
+      "human_speed_ms": 1.13,
+      "reaction_time_s": 0.37,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 3.643,
+      "simulated_dist_m": 1.12,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-087",
+      "robot_speed_ms": 1.04,
+      "human_speed_ms": 1.51,
+      "reaction_time_s": 0.29,
+      "sensor_noise_sigma_m": 0.07,
+      "calculated_s_req_m": 2.637,
+      "simulated_dist_m": 1.03,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-088",
+      "robot_speed_ms": 1.99,
+      "human_speed_ms": 0.69,
+      "reaction_time_s": 0.35,
+      "sensor_noise_sigma_m": 0.19,
+      "calculated_s_req_m": 3.751,
+      "simulated_dist_m": 1.02,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-089",
+      "robot_speed_ms": 0.94,
+      "human_speed_ms": 1.78,
+      "reaction_time_s": 0.21,
+      "sensor_noise_sigma_m": 0.12,
+      "calculated_s_req_m": 2.586,
+      "simulated_dist_m": 2.99,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-090",
+      "robot_speed_ms": 2.41,
+      "human_speed_ms": 1.78,
+      "reaction_time_s": 0.33,
+      "sensor_noise_sigma_m": 0.13,
+      "calculated_s_req_m": 5.635,
+      "simulated_dist_m": 1.03,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-091",
+      "robot_speed_ms": 2.12,
+      "human_speed_ms": 1.27,
+      "reaction_time_s": 0.23,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 4.23,
+      "simulated_dist_m": 1.1,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-092",
+      "robot_speed_ms": 1.64,
+      "human_speed_ms": 0.61,
+      "reaction_time_s": 0.24,
+      "sensor_noise_sigma_m": 0.06,
+      "calculated_s_req_m": 2.614,
+      "simulated_dist_m": 1.12,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-093",
+      "robot_speed_ms": 1.0,
+      "human_speed_ms": 1.38,
+      "reaction_time_s": 0.32,
+      "sensor_noise_sigma_m": 0.17,
+      "calculated_s_req_m": 2.631,
+      "simulated_dist_m": 3.4,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-094",
+      "robot_speed_ms": 1.44,
+      "human_speed_ms": 0.94,
+      "reaction_time_s": 0.36,
+      "sensor_noise_sigma_m": 0.09,
+      "calculated_s_req_m": 2.879,
+      "simulated_dist_m": 3.4,
+      "ground_truth_unsafe": false
+    },
+    {
+      "sample_id": "EXP-095",
+      "robot_speed_ms": 0.82,
+      "human_speed_ms": 1.76,
+      "reaction_time_s": 0.11,
+      "sensor_noise_sigma_m": 0.23,
+      "calculated_s_req_m": 2.289,
+      "simulated_dist_m": 2.22,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-096",
+      "robot_speed_ms": 2.49,
+      "human_speed_ms": 0.69,
+      "reaction_time_s": 0.27,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 4.714,
+      "simulated_dist_m": 2.21,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-097",
+      "robot_speed_ms": 1.87,
+      "human_speed_ms": 1.43,
+      "reaction_time_s": 0.24,
+      "sensor_noise_sigma_m": 0.18,
+      "calculated_s_req_m": 3.847,
+      "simulated_dist_m": 2.38,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-098",
+      "robot_speed_ms": 2.33,
+      "human_speed_ms": 0.65,
+      "reaction_time_s": 0.18,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 4.026,
+      "simulated_dist_m": 3.2,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-099",
+      "robot_speed_ms": 1.57,
+      "human_speed_ms": 1.34,
+      "reaction_time_s": 0.18,
+      "sensor_noise_sigma_m": 0.09,
+      "calculated_s_req_m": 2.973,
+      "simulated_dist_m": 2.05,
+      "ground_truth_unsafe": true
+    },
+    {
+      "sample_id": "EXP-100",
+      "robot_speed_ms": 1.4,
+      "human_speed_ms": 1.3,
+      "reaction_time_s": 0.12,
+      "sensor_noise_sigma_m": 0.24,
+      "calculated_s_req_m": 2.66,
+      "simulated_dist_m": 3.46,
+      "ground_truth_unsafe": false
+    }
+  ]
+}
