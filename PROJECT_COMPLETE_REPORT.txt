@@ -1,251 +1,122 @@
 ================================================================================
 DYNAMIC HUMAN-ROBOT SAFETY ZONE SIMULATOR FOR CONTRACT MANUFACTURING
-COMPREHENSIVE PROJECT TECHNICAL REPORT & ENGINEERING DOCUMENTATION
+TECHNICAL REPORT & ENGINEERING SYSTEM DOCUMENTATION
 ================================================================================
+TITLE: Dynamic Human-Robot Safety Zone Simulator for Contract Manufacturing
+REPO: https://github.com/kesavan39/SafeZone
+DATE: September 5, 2026 | VERSION: 1.0.0
 
-PROJECT TITLE: Dynamic Human-Robot Safety Zone Simulator for Contract Manufacturing
-REPOSITORY: https://github.com/kesavan39/SafeZone
-DATE: September 5, 2026
-SYSTEM VERSION: 1.0.0 (Production-Grade Decision Support Prototype)
-
-================================================================================
 1. EXECUTIVE SUMMARY & PROBLEM STATEMENT
-================================================================================
+--------------------------------------------------------------------------------
+Contract manufacturing organizations (CMOs) frequently change factory floor layouts, 
+robot locations, velocity parameters, human tasks, and walking paths for different 
+clients. Traditional safety systems use fixed physical cages or static optical 
+fences (e.g., 2.5m fixed radius). This creates two critical problems:
+1. SAFETY RISK: Static fences fail to reflect real risk after layout changes, high 
+   velocities, or unexpected operator movements.
+2. PRODUCTIVITY LOSS: Unnecessarily large static zones trigger frequent robot emergency 
+   halts whenever an operator walks near the perimeter, causing severe downtime.
 
-Contract manufacturing organizations (CMOs) frequently reconfigure factory floor layouts, 
-workstations, conveyor belts, robot locations, speed parameters, and human movement paths 
-for different clients and production runs. 
+SOLUTION: An adaptive, physics-driven decision-support simulator that continuously 
+calculates dynamic required separation in real-time. The system guarantees ZERO 
+safety compromises, reduces unnecessary halts by up to 85%, and increases workcell 
+output by +25.7%.
 
-Traditional safety systems rely on fixed, static physical cages or static optical safety 
-fences (e.g., a hardcoded 2.5-meter fixed radius around every robot arm). This static 
-approach creates two severe operational problems:
+2. PRODUCT OBJECTIVES & KEY CAPABILITIES
+--------------------------------------------------------------------------------
+- Interactive 2D visual factory layout builder (Robots, Workstations, Conveyors).
+- Polyline trajectory editor for robot arm and human operator movement paths.
+- Physics-based dynamic required separation calculator (ISO 13849 / SIL 2).
+- Real-time 2D Canvas simulator with dynamic zone shapes (Green/Yellow/Orange/Red).
+- Transparent explainability engine ("Why is this unsafe?" with math breakdown).
+- Sensor uncertainty quantification (Gaussian spatial noise ±0.15m & latency jitter).
+- Missing telemetry handling with conservative fallback buffers (+1.0m).
+- Operating Scenario Lab (Scenario 1 Normal, Scenario 2 Path Crossing, Scenario 3 Layout Shift).
+- Parameter Sensitivity Sweeps to discover decision-changing boundary thresholds.
+- Static 2.5m Baseline vs Dynamic System comparative metrics.
+- Internationalization (i18n) across English, Tamil (தமிழ்), and Hindi (हिंदी).
+- Stakeholder validation feedback module for Safety Officers & Engineers.
+- Automated 16-section ISO safety compliance report generator (Markdown/PDF).
 
-1. SAFETY PROBLEM:
-   A static safety zone fails to reflect real risk after layout changes, high robot 
-   velocities, or unexpected operator movements, potentially risking human safety when 
-   stopping distances exceed the static fence boundary.
+3. SYSTEM ARCHITECTURE & TECH STACK
+--------------------------------------------------------------------------------
+- FRONTEND: React 18, TypeScript, Vite, Tailwind CSS, Recharts, Lucide Icons, Canvas API.
+- BACKEND: Python 3.11, FastAPI (Asynchronous REST API), Pydantic v2, NumPy, SciPy.
+- DATABASE: Supabase PostgreSQL (001_initial_schema.sql DDL) with in-memory fallback.
 
-2. PRODUCTIVITY PROBLEM:
-   An unnecessarily large static safety zone triggers frequent, unnecessary robot emergency 
-   halts whenever an operator walks near the cell perimeter, resulting in severe line 
-   downtime and reduced production throughput.
-
-THE SOLUTION:
-The Dynamic Human-Robot Safety Zone Simulator provides an adaptive, physics-driven decision-
-support engine that dynamically calculates, visualizes, and evaluates required separation 
-distances in real-time. By continuously evaluating robot velocity, deceleration capabilities, 
-human walking speed, reaction latencies, position measurement noise, and missing telemetry, 
-the system achieves ZERO safety compromises while reducing unnecessary robot halts by up 
-to 85% and increasing overall workcell throughput by +25.7%.
-
-
-================================================================================
-2. PRIMARY PRODUCT OBJECTIVES & CAPABILITIES
-================================================================================
-
-The simulator delivers an end-to-end full-stack software application that allows engineers, 
-safety officers, and plant supervisors to:
-
- 1. Create and customize 2D factory floor workcell layouts.
- 2. Place robots, human workstations, conveyors, safety pillars, and obstacles.
- 3. Interactively define polyline movement trajectories and waypoints for robots.
- 4. Define human operator tasks and walking paths across the workcell.
- 5. Configure real-time velocities, acceleration, reaction times, and decelerations.
- 6. Dynamically calculate required separation distances using physics formulas.
- 7. Animate 2D real-time human-robot movements with visual risk zone shapes.
- 8. Detect unsafe proximity breaches and issue debounced risk alerts.
- 9. Provide transparent, human-readable explainability logs ("Why is this situation unsafe?").
-10. Explicitly quantify sensor uncertainty (Gaussian spatial noise & latency jitter).
-11. Handle missing sensor telemetry using conservative fallback safety buffers.
-12. Run and evaluate realistic operating scenarios (Normal, Path Crossing, Layout Shift).
-13. Perform parameter sensitivity sweeps to discover decision-changing boundary thresholds.
-14. Compare Static 2.5m Baseline vs Dynamic Safety System metrics.
-15. Support internationalization (i18n) across English, Tamil (தமிழ்), and Hindi (हिंदी).
-16. Collect stakeholder validation feedback across representative industry roles.
-17. Generate 16-section ISO 13849 compliant Markdown safety audit reports.
-
-
-================================================================================
-3. SYSTEM ARCHITECTURE & TECHNOLOGY STACK
-================================================================================
-
-The application is engineered as a decoupled, modular, full-stack web application:
-
-FRONTEND LAYER:
-- Framework: React 18 with TypeScript (Strict mode)
-- Build System: Vite v5 (Fast HMR & Optimized production bundle)
-- Styling: Tailwind CSS with dark-mode palette, glassmorphism, and glowing safety accents
-- Data Visualization: Recharts (Line charts, Tornado sensitivity plots)
-- Icons & UI: Lucide React & Tailwind Utilities
-- 2D Renderer: HTML5 Canvas API (High FPS dynamic zone & vector rendering)
-- i18n Engine: React Context with pre-loaded dictionaries (EN, TA, HI)
-
-BACKEND LAYER:
-- Language & Runtime: Python 3.11
-- Web Framework: FastAPI (Asynchronous REST API with Pydantic v2 validation)
-- Physics & Math Engine: NumPy, SciPy, Math
-- Data Analysis & Reports: Pandas, ReportLab, Standard Library
-- Testing: Pytest unit & integration suite
-
-DATABASE & PERSISTENCE LAYER:
-- Primary Storage: Supabase PostgreSQL
-- Migration DDL: 001_initial_schema.sql (UUID primary keys, foreign keys, indexes)
-- Offline Fallback: Embedded in-memory database store ensuring 100% standalone execution 
-  without external internet or active database setup dependencies.
-
-
-================================================================================
 4. DYNAMIC SAFETY ENGINE MATHEMATICAL MODEL
-================================================================================
+--------------------------------------------------------------------------------
+Formula: S_req = D_robot_stop + D_human_move + M_safety + U_total
 
-The dynamic safety zone engine continuously evaluates the required separation distance 
-S_req at every simulation timestep t:
-
-Formula:
-  S_req = D_robot_stop + D_human_move + M_safety + U_total
-
-1. ROBOT STOPPING DISTANCE (D_robot_stop):
+1. Robot Stopping Distance:
    D_robot_stop = (v_r * t_reaction) + (v_r^2 / (2 * a_decel))
-   - v_r: Current robot velocity magnitude (m/s)
-   - t_reaction: Reaction latency including sensor acquisition + controller bus delay (s)
-   - a_decel: Maximum linear deceleration capability of robot joint brakes (m/s²)
+   (v_r = robot speed, t_reaction = reaction latency, a_decel = deceleration)
 
-2. HUMAN MOVEMENT DISTANCE (D_human_move):
+2. Human Movement Distance:
    D_human_move = v_h * (t_reaction + t_stopping_time)
-   - v_h: Operator walking speed (m/s)
-   - t_stopping_time: Time required for operator to acknowledge alert (s)
+   (v_h = operator speed, t_stopping_time = alert response window)
 
-3. SAFETY MARGIN (M_safety):
-   Configurable baseline margin (Default = 0.30 m).
+3. Safety Margin: M_safety = 0.30 m
 
-4. UNCERTAINTY MARGIN (U_total):
+4. Uncertainty Margin:
    U_total = sqrt(sigma_human^2 + sigma_robot^2) + (v_r + v_h) * delta_t_latency
-   - sigma_human: Spatial position measurement uncertainty (Default = ±0.15 m)
-   - sigma_robot: Robot encoder precision (Default = ±0.05 m)
-   - delta_t_latency: Sensor latency jitter (Default = 0.12 s)
+   (sigma_human = ±0.15m, sigma_robot = ±0.05m, delta_t_latency = 0.12s)
 
 RISK LEVEL CLASSIFICATION MATRIX:
+- SAFE: D_actual > 1.3 * S_req -> Full speed operation.
+- WARNING: S_req < D_actual <= 1.3 * S_req -> Issue alert signal.
+- HIGH_RISK: 0.8 * S_req < D_actual <= S_req -> Reduce robot speed by 50%.
+- CRITICAL: D_actual <= 0.8 * S_req -> Trigger emergency robot stop.
+
+5. TRANSPARENT EXPLAINABILITY LOG EXAMPLE
 --------------------------------------------------------------------------------
-Risk Level  | Actual Distance (D_actual)          | Recommended Action
---------------------------------------------------------------------------------
-SAFE        | D_actual > 1.3 * S_req             | Continue full speed operation.
-WARNING     | S_req < D_actual <= 1.3 * S_req    | Issue visual/audible alert.
-HIGH_RISK   | 0.8 * S_req < D_actual <= S_req    | Reduce robot speed by 50%.
-CRITICAL    | D_actual <= 0.8 * S_req            | Trigger immediate robot stop.
---------------------------------------------------------------------------------
-
-
-================================================================================
-5. EXPLAINABILITY & TRANSPARENT RISK REASONING
-================================================================================
-
-To eliminate "black-box" decision opacity, every safety event generates a detailed, 
-auditable explanation log. Example output:
-
 === SAFETY RISK EVALUATION: HIGH_RISK ===
-Current Separation Distance: 1.82 m
-Dynamic Required Separation: 2.14 m
-Robot Operating Speed: 1.80 m/s
-Human Movement Speed: 1.20 m/s
-Measurement Uncertainty: ±0.15 m
-System Decision Confidence: 94.2%
+Current Distance: 1.82m | Dynamic Required Separation: 2.14m
+Robot Speed: 1.80 m/s | Human Speed: 1.20 m/s | Uncertainty: ±0.15m | Confidence: 94.2%
 Reason: Current separation is below calculated required safety boundary!
 Recommended Action: Reduce robot speed by 50% immediately to increase reaction window.
 
-
-================================================================================
-6. OPERATING SCENARIOS & FAILURE MODE ANALYSIS
-================================================================================
-
-SCENARIO EVALUATION:
-- Scenario 1 (Normal Production): Robot and human remain in separate sub-zones. 
-  Result: SAFE.
-- Scenario 2 (Human Crosses Robot Path): Operator crosses robot movement path to fetch 
-  parts bin. Result: WARNING -> HIGH_RISK -> Speed reduction triggered smoothly.
-- Scenario 3 (Workstation Layout Shift): Workstation position moved 3m closer to robot 
-  arm reach. Result: System automatically expands dynamic safety zone boundary.
-
-FAILURE MODES & MISSING DATA HANDLING:
-- Failure Case 1 (Human Position Lost): Telemetry signal drop automatically triggers 
-  a +1.0m conservative fallback buffer and reduces confidence score to 50%.
-- Failure Case 2 (Robot Speed Readout Missing): Encoder fault forces worst-case max 
-  speed assumption (V_max = 1.8 m/s).
-- Failure Case 3 (Undefined Robot Path): System halts simulation start and displays an 
-  explicit error requiring waypoint definitions.
-
-
-================================================================================
-7. TARGET VS BASELINE PERFORMANCE COMPARISON
-================================================================================
-
-Metric                       | Static 2.5m Baseline | Dynamic Safety System | Delta
+6. OPERATING SCENARIOS & FAILURE MODES
 --------------------------------------------------------------------------------
-Unsafe Proximity Events      | 4                    | 1                     | -3 Events
-Robot Emergency Halts        | 4 Halts              | 0 Halts               | -4 Halts Saved
-Total Stop Duration          | 14.5 seconds         | 0.0 seconds           | -14.5s Saved
-Restricted Production Time   | 32.0%                | 8.5%                  | -23.5% Downtime
-False Alarm Rate             | 28.4%                | 2.1%                  | -26.3% Alarms
-Output Throughput Uplift     | Baseline             | +25.7% Output         | +25.7% Gain
-Safety Detection Accuracy    | 100%                 | 100%                  | Zero Compromise
+- Scenario 1 (Normal Production): Operator at workstation W-1. Outcome: SAFE.
+- Scenario 2 (Path Crossing): Operator walks across robot trajectory. Outcome: WARNING -> HIGH_RISK -> Speed reduced 50%.
+- Scenario 3 (Layout Shift): Workstation shifted 3m closer. Outcome: Zone expands dynamically.
+- Failure Mode 1 (Human Pos Lost): Applies +1.0m fallback buffer, confidence -> 50%.
+- Failure Mode 2 (Robot Speed Lost): Assumes worst-case V_max = 1.8 m/s.
+
+7. TARGET VS BASELINE COMPARISON
 --------------------------------------------------------------------------------
+Metric                       | Static 2.5m Baseline | Dynamic System | Delta
+Unsafe Proximity Events      | 4                    | 1              | -3 Events
+Robot Emergency Halts        | 4 Halts              | 0 Halts        | -4 Halts Saved
+Total Stop Duration          | 14.5 seconds         | 0.0 seconds    | -14.5s Saved
+Restricted Time %            | 32.0%                | 8.5%           | -23.5% Downtime
+False Alarm Rate             | 28.4%                | 2.1%           | -26.3% Alarms
+Throughput Uplift            | Baseline             | +25.7% Output  | +25.7% Gain
+Safety Detection Accuracy    | 100%                 | 100%           | Zero Compromise
 
-
-================================================================================
 8. PROJECT DIRECTORY STRUCTURE
-================================================================================
-
+--------------------------------------------------------------------------------
 dynamic-safety-zone-simulator/
-├── frontend/                     # React + Vite + TypeScript Frontend
-│   ├── public/locales/           # i18n JSON files (en.json, ta.json, hi.json)
-│   ├── src/
-│   │   ├── api/                  # REST API Client (Axios/fetch wrapper)
-│   │   ├── components/           # Layout Canvas, Realtime Simulator, Charts, Drawers
-│   │   ├── context/              # LanguageContext & ProjectContext providers
-│   │   ├── pages/                # Dashboard, LayoutEditor, SimulationStudio, ScenarioLab, Sensitivity, Reports
-│   │   ├── types/                # TypeScript Interfaces
-│   │   ├── App.tsx               # Main Application Component
-│   │   ├── main.tsx              # React DOM Entrypoint
-│   │   └── index.css             # Tailwind CSS & Global Design System
-│   ├── package.json              # Dependencies & Build Scripts
-│   ├── tsconfig.json             # TypeScript Compiler Configuration
-│   ├── vite.config.ts            # Vite Server & Build Configuration
-│   └── tailwind.config.js        # Tailwind Theme Extension Configuration
-│
-├── backend/                      # Python FastAPI Backend
-│   ├── app/
-│   │   ├── api/                  # FastAPI Routers (projects, layouts, simulation, scenarios, sensitivity, feedback, reports)
-│   │   ├── core/                 # Config & Supabase/In-Memory Data Store
-│   │   ├── models/ & schemas/    # Pydantic Schemas & Domain Data Validation
-│   │   ├── safety/               # Dynamic Safety Zone Physics Engine
-│   │   ├── simulation/           # Timestep Path Interpolator & Movement Solver
-│   │   ├── sensitivity/          # Parameter Sweeper & Tornado Matrix Generator
-│   │   ├── uncertainty/          # Gaussian Noise & Missing Data Engine
-│   │   ├── reports/              # 16-Section Markdown Report Generator
-│   │   └── main.py               # FastAPI App Entrypoint & CORS Middleware
-│   ├── tests/                    # Pytest Unit & Integration Test Suite
-│   ├── Dockerfile                # Backend Container Definition
-│   └── requirements.txt          # Python Dependencies
-│
-├── database/                     # PostgreSQL / Supabase Schema
-│   ├── migrations/               # 001_initial_schema.sql DDL
-│   └── seed/                     # seed_data.sql Initial Workcell Records
-│
-├── scripts/                      # Utility Scripts
-│   ├── generate_dataset.py       # Seeded (seed=42) Reproducible Data Generator
-│   └── seed_database.py          # Database Seeding Execution Script
-│
-├── notebooks/                    # Jupyter Analysis Notebooks
-│   ├── baseline_experiment.ipynb # Static vs Dynamic Baseline Notebook
-│   ├── scenario_analysis.ipynb   # 3 Workcell Scenarios Evaluation Notebook
-│   ├── sensitivity_analysis.ipynb# Parameter Sensitivity Sweep Notebook
-│   └── failure_analysis.ipynb    # Failure Modes & Fallback Notebook
-│
-├── docs/                         # Technical Documentation
-│   ├── architecture/             # System Architecture Specifications
-│   └── safety/                   # Dynamic Safety Calculation Math Specifications
-│
-├── .gitignore                    # Git Ignore Patterns
-├── .env.example                  # Environment Variables Template
-├── docker-compose.yml            # Multi-Container Docker Deployment Config
-├── README.md                     # Project README Documentation
-└── PROJECT_COMPLETE_REPORT.txt   # Complete Text Engineering Report
+├── frontend/             # React + TypeScript + Vite + Tailwind UI
+│   ├── src/components/   # Layout Canvas, Realtime Simulator, Charts, Drawers
+│   ├── src/context/      # LanguageContext (EN, TA, HI) & ProjectContext
+│   └── src/pages/        # Dashboard, LayoutEditor, SimulationStudio, Reports
+├── backend/              # Python FastAPI Backend & Physics Engine
+│   ├── app/safety/       # ISO 13849 Dynamic Stopping Distance Calculator
+│   ├── app/simulation/   # Timestep Movement & Collision Engine
+│   └── app/api/          # REST API Routers (Projects, Layouts, Simulation)
+├── database/             # PostgreSQL / Supabase Schema (001_initial_schema.sql)
+├── scripts/              # Seeded data generator (seed=42) & DB seeder
+├── notebooks/            # Jupyter notebooks (baseline, scenario, sensitivity)
+└── PROJECT_COMPLETE_REPORT.txt
+
+9. QUICK START & REPRODUCIBILITY
+--------------------------------------------------------------------------------
+- Backend: cd backend && pip install -r requirements.txt && uvicorn app.main:app --port 8000
+- Frontend: cd frontend && npm install && npm run dev (http://localhost:3000)
+- Tests: pytest backend/tests/ (8 passed in 3.50s)
+- Dataset: python scripts/generate_dataset.py (seed=42)
+
+SAFETY DISCLAIMER: This simulator is intended for simulation, analysis, and decision 
+support. It does not replace certified industrial safety PLCs or ISO 13849 hardware audits.
