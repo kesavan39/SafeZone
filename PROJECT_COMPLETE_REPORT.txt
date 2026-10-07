@@ -120,12 +120,12 @@ dynamic-safety-zone-simulator/
 - Dataset: python scripts/generate_dataset.py (seed=42)
 - Sensitivity Notebooks: Check notebooks/sensitivity_validation.ipynb for validation graphs
 
-10. RECENT IMPROVEMENTS & VALIDATION (REVIEW 2 UPDATES)
+10. RECENT IMPROVEMENTS (REVIEW 2)
 
-- Live Profiling & Benchmarking: Added `scripts/profiling_benchmark.py` which executes a high-frequency (100Hz) trajectory simulation using `cProfile` and `timeit`. Validates that average execution time per timestep (e.g. ~0.1ms) easily meets the strict <5ms SIL 2 timing constraint.
-- Sensitivity Sweep Validation: Added `notebooks/sensitivity_validation.ipynb` utilizing standard scientific libraries (matplotlib, numpy) to map out transition boundaries (Warning -> Critical halt). Demonstrates dynamic required separation in response to varied robot and human speeds.
-- Integration Testing & Synchronization: Added `backend/tests/test_integration_sync.py` leveraging `pytest-asyncio` to validate that the mathematical safety engine's outputs and bounding boxes synchronize effectively across different simulated frontend network latencies without breaking SIL 2 assurances.
-- Granular Documentation: Expanded code comments in `backend/app/main.py` and implemented robust global error boundaries (`RequestValidationError` & `Exception` handlers) to prevent UI crashes. Documented the API endpoints, database schemas, and testing strategies cleanly in `README.md`.
+- Profiling: `scripts/profiling_benchmark.py` verifies timesteps (~0.1ms) easily meet the <5ms SIL 2 constraint.
+- Sensitivity Validation: `notebooks/sensitivity_validation.ipynb` maps transition boundaries.
+- Integration Testing: `test_integration_sync.py` validates sync across network latencies.
+- Documentation: Added robust error boundaries in `main.py` and documented API/DB in `README.md`.
 
 SAFETY DISCLAIMER: This simulator is intended for simulation, analysis, and decision 
 support. It does not replace certified industrial safety PLCs or ISO 13849 hardware audits.
