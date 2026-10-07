@@ -1,0 +1,153 @@
+import json
+import os
+
+notebook_content = {
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Sensitivity Analysis & Experimental Validation\n",
+    "\n",
+    "This notebook elaborates on the experimental validation setup to demonstrate the exact sensitivity sweep curves where boundary decisions transition from `WARNING` to `CRITICAL` (emergency halt).\n",
+    "\n",
+    "We utilize the `DynamicSafetyCalculator` to sweep across multiple velocities and latencies."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "import os\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# Add backend to path\n",
+    "sys.path.insert(0, os.path.abspath(os.path.join(os.getcwd(), '..', 'backend')))\n",
+    "\n",
+    "from app.safety.dynamic_zone_calculator import DynamicSafetyCalculator"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Sensitivity Sweep: Robot Speed vs Required Separation\n",
+    "\n",
+    "We sweep the robot speed from $0.5$ m/s to $3.0$ m/s while keeping human speed constant at $1.2$ m/s, to observe how the `CRITICAL` boundaries shift."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "robot_speeds = np.linspace(0.5, 3.0, 50)\n",
+    "human_speed = 1.2\n",
+    "reaction_time = 0.25\n",
+    "decel = 1.2\n",
+    "actual_distance_fixed = 3.0 # Operator is 3.0m away\n",
+    "\n",
+    "s_reqs = []\n",
+    "risk_levels = []\n",
+    "\n",
+    "for rs in robot_speeds:\n",
+    "    req_sep, _ = DynamicSafetyCalculator.calculate_required_separation(\n",
+    "        robot_speed=rs,\n",
+    "        human_speed=human_speed,\n",
+    "        reaction_time=reaction_time,\n",
+    "        decel=decel,\n",
+    "        pos_uncertainty=0.15,\n",
+    "        sensor_latency=0.12\n",
+    "    )\n",
+    "    s_reqs.append(req_sep)\n",
+    "    risk, _ = DynamicSafetyCalculator.classify_risk(actual_distance_fixed, req_sep)\n",
+    "    risk_levels.append(risk)\n",
+    "\n",
+    "colors = {'SAFE': 'green', 'WARNING': 'yellow', 'HIGH_RISK': 'orange', 'CRITICAL': 'red'}\n",
+    "mapped_colors = [colors[r] for r in risk_levels]\n",
+    "\n",
+    "plt.figure(figsize=(10, 6))\n",
+    "plt.scatter(robot_speeds, s_reqs, c=mapped_colors, label='Dynamic S_req')\n",
+    "plt.axhline(y=actual_distance_fixed, color='blue', linestyle='--', label='Actual Distance (3.0m)')\n",
+    "plt.title(\"Boundary Transition: Robot Speed vs Required Separation\")\n",
+    "plt.xlabel(\"Robot Speed (m/s)\")\n",
+    "plt.ylabel(\"Required Separation (m)\")\n",
+    "plt.legend()\n",
+    "plt.grid(True)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Decision Surface: Human Speed & Robot Speed\n",
+    "\n",
+    "Let's visualize the 2D surface of the required separation."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "human_speeds = np.linspace(0.0, 2.5, 30)\n",
+    "X, Y = np.meshgrid(robot_speeds, human_speeds)\n",
+    "Z = np.zeros_like(X)\n",
+    "\n",
+    "for i in range(X.shape[0]):\n",
+    "    for j in range(X.shape[1]):\n",
+    "        req_sep, _ = DynamicSafetyCalculator.calculate_required_separation(\n",
+    "            robot_speed=X[i,j],\n",
+    "            human_speed=Y[i,j],\n",
+    "            reaction_time=reaction_time,\n",
+    "            decel=decel\n",
+    "        )\n",
+    "        Z[i,j] = req_sep\n",
+    "\n",
+    "fig = plt.figure(figsize=(10, 8))\n",
+    "ax = fig.add_subplot(111, projection='3d')\n",
+    "surf = ax.plot_surface(X, Y, Z, cmap='viridis')\n",
+    "ax.set_xlabel('Robot Speed (m/s)')\n",
+    "ax.set_ylabel('Human Speed (m/s)')\n",
+    "ax.set_zlabel('Required Separation (m)')\n",
+    "fig.colorbar(surf, shrink=0.5, aspect=5)\n",
+    "plt.title(\"Decision Surface for Dynamic Separation\")\n",
+    "plt.show()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
+
+output_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'notebooks', 'sensitivity_validation.ipynb'))
+with open(output_path, 'w') as f:
+    json.dump(notebook_content, f, indent=1)
+
+print(f"Generated notebook at {output_path}")

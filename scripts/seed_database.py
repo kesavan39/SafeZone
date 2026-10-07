@@ -4,6 +4,7 @@ import os
 # Ensure backend app imports work
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "backend")))
 
+# pyrefly: ignore [missing-import]
 from app.core.supabase import db
 
 def seed_database():
